@@ -1,6 +1,6 @@
 export class HospitalPage {
 
-    constructor(page) {
+    constructor(page)  {
         this.page = page;
         this.locationlocator = this.page.getByPlaceholder('Search location');
         this.hospitaltype = this.page.getByPlaceholder('Search doctors, clinics, hospitals, etc.');

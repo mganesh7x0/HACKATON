@@ -25,6 +25,10 @@ export class HospitalPage {
             await this.locationlocator.fill(city);
         } catch (error) {
             console.log('Error while filling location field:');
+
+
+
+            
         }
     }
 

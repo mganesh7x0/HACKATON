@@ -27,11 +27,6 @@ test('@sanity Checkbox validation', async () => {
 });
 
 
-
-//
-//Regression Suite
-//
-
 test('@regression Empty Password Field Error', async () => {
   await accountLogin.login(loginData.emptyPassword.username, loginData.emptyPassword.password);
   const errorMessage = await accountLogin.getPasswordErrorText();
@@ -53,10 +48,3 @@ test('@regression Empty login input error messages', async () => {
   ).toBe(true);
 });
 
-
-// test('@sanity Valid Login', async () => {
-//   await accountLogin.login(loginData.valid.username, loginData.valid.password);
-//   const UName=await accountLogin.getloginName()
-//   console.log(UName)
-//   await expect(UName).toBe('Kiran')
-// });

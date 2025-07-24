@@ -10,7 +10,7 @@ export class DiagnosticsPage {
       console.error('Error navigating to diagnostics page:');
     }
   }
-  //Promise.all waits for all innerText() calls to complete.
+ 
   async getCityList() {
     try {
 

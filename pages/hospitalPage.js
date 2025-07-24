@@ -24,11 +24,7 @@ export class HospitalPage {
         try {
             await this.locationlocator.fill(city);
         } catch (error) {
-            console.log('Error while filling location field:');
-
-
-
-            
+            console.log('Error while filling location field:');  
         }
     }
 
@@ -45,8 +41,7 @@ export class HospitalPage {
 
     async qualifiedHospitals() {
         try {
-            await this.page.waitForSelector('.left .c-estb-card', { timeout: 10000 });
-
+            await this.page.waitForSelector('.left .c-estb-card', { timeout: 10000  });
             const hospitalCards = await this.page.locator('.left .c-estb-card').all();
             const qualifiedHospitals = [];
 
@@ -72,7 +67,7 @@ export class HospitalPage {
                 }
             }
 
-            //console.log('Qualified Hospitals:', qualifiedHospitals);
+           
             return qualifiedHospitals;
 
         } catch (error) {
@@ -92,8 +87,6 @@ export class HospitalPage {
         await this.page.waitForTimeout(10000);
 
         await this.page.keyboard.press('Enter');
-
-        // Wait for error message to appear
 
         await this.messageLocator.waitFor(); // Ensure it's visible
 

@@ -12,21 +12,14 @@ test('Validate form does not allow submission with invalid data', async ({ page 
   }
 });
 
-
 test('Form Schedule button disable with out phone number field input', async ({ page }) => {
   try {
     const wellnessPage = new CorporateWellnessPage(page);
     await wellnessPage.goto();
     await wellnessPage.fillValidDetails();
-
-    const button = await wellnessPage.scheduleButton;
-    // await button.waitFor({ state: 'visible' });
-    
+    const button = await wellnessPage.scheduleButton;   
     await expect(button).toBeDisabled();
-
-    // await expect(isEnabled).toBeTruthy();
   } catch (e) {
-    //expect(button).toBeDisabled()
     console.log('Error in testCase: Form enables Schedule Demo button with out valid input ');
   }
 });
@@ -35,13 +28,11 @@ test('Dropdown values reflect correctly after selection', async ({ page }) => {
   try {
     const wellnessPage = new CorporateWellnessPage(page);
     await wellnessPage.goto();
-
+    //Accessing the dropdown locator from the POM instance 
     await wellnessPage.orgSizeSelect.selectOption({ label: '1001-5000' });
     await wellnessPage.interestSelect.selectOption({ label: 'Referring someone' });
-
     const sizeValue = await wellnessPage.orgSizeSelect.inputValue();
     const interestValue = await wellnessPage.interestSelect.inputValue();
-
     expect(sizeValue).toBe('1001-5000');
     expect(interestValue).toBe('Referring someone');
   } catch (e) {
@@ -49,7 +40,7 @@ test('Dropdown values reflect correctly after selection', async ({ page }) => {
   }
 });
 
-test('@sanity Url contains corporate', async ({ page }) => {
+test('Url contains corporate', async ({ page }) => {
   try {
     const wellnessPage = new CorporateWellnessPage(page);
     await wellnessPage.goto();

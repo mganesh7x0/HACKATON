@@ -17,17 +17,17 @@ test.afterEach(async ({ page }) => {
 // Sanity Suite
 //
 
-test('@sanity Valid Login', async () => {
+test('Valid Login', async () => {
   await accountLogin.login(loginData.valid.username, loginData.valid.password);
 });
 
-test('@sanity Checkbox validation', async () => {
+test('Checkbox validation', async () => {
   const isChecked = await accountLogin.isRememberMeChecked();
   expect(isChecked).toBe(true);
 });
 
 
-test('@regression Empty Password Field Error', async () => {
+test('Empty Password Field Error', async () => {
   await accountLogin.login(loginData.emptyPassword.username, loginData.emptyPassword.password);
   const errorMessage = await accountLogin.getPasswordErrorText();
   expect(
@@ -35,7 +35,7 @@ test('@regression Empty Password Field Error', async () => {
   ).toBe(true);
 })
 
-test('@regression Empty login input error messages', async () => {
+test('Empty login input error messages', async () => {
   await accountLogin.login(loginData.emptyBoth.username, loginData.emptyBoth.password);
   const usernameError = await accountLogin.getUsernameErrorText();
   const passwordError = await accountLogin.getPasswordErrorText();

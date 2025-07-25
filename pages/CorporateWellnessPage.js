@@ -4,10 +4,11 @@ export class CorporateWellnessPage {
     this.nameInput = page.getByPlaceholder("Name").first();
     this.orgInput = page.getByPlaceholder("Organization Name").first();
     this.phoneInput = page.getByPlaceholder("Contact Number").first();
-    this.emailInput = page.locator('//*[@id="officialEmailId"]').first();
-    this.orgSizeSelect = page.locator('//*[@id="organizationSize"]').first();
-    this.interestSelect = page.locator('//*[@id="interestedIn"]').first();
-    this.scheduleButton = page.locator("//header[@id='header']//button[@type='submit'][normalize-space()='Schedule a demo']")
+    this.emailInput = page.locator('#officialEmailId').first();
+    this.orgSizeSelect = page.locator('#organizationSize').first();
+    this.interestSelect = page.locator('#interestedIn').first();
+    //this.scheduleButton = page.locator("//header[@id='header']//button[@type='submit'][normalize-space()='Schedule a demo']")
+    this.scheduleButton=page.getByRole('button', { name: 'Schedule a demo' })
   }
 
   async goto() {

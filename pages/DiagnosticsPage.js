@@ -1,6 +1,7 @@
 export class DiagnosticsPage {
   constructor(page) {
     this.page = page;
+    this.cityLocator= page.locator("//li[@class='u-text--center']");
   }
 
   async goto() {
@@ -16,7 +17,7 @@ export class DiagnosticsPage {
 
       const cityNames = [];
 
-      const cities = await this.page.locator("//li[@class='u-text--center']").all();
+      const cities = await this.cityLocator.all();
 
       for (const city of cities) {
         cityNames.push(await city.innerText());

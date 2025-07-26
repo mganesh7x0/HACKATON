@@ -28,15 +28,15 @@ test('Dropdown values reflect correctly after selection', async ({ page }) => {
   try {
     const wellnessPage = new CorporateWellnessPage(page);
     await wellnessPage.goto();
-    //Accessing the dropdown locator from the POM instance 
-    await wellnessPage.orgSizeSelect.selectOption({ label: '1001-5000' });
-    await wellnessPage.interestSelect.selectOption({ label: 'Referring someone' });
-    const sizeValue = await wellnessPage.orgSizeSelect.inputValue();
-    const interestValue = await wellnessPage.interestSelect.inputValue();
+ 
+    await wellnessPage.dropSelect(); // Set dropdown values
+ 
+    const { sizeValue, interestValue } = await wellnessPage.getDropSelectValue(); // Destructure returned values
+ 
     expect(sizeValue).toBe('1001-5000');
     expect(interestValue).toBe('Referring someone');
   } catch (e) {
-    console.log('Error in testCase:Dropdown values reflect correctly after selection');
+    console.log('Error in testCase: Dropdown values reflect correctly after selection');
   }
 });
 

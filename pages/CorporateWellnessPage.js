@@ -7,7 +7,6 @@ export class CorporateWellnessPage {
     this.emailInput = page.locator('#officialEmailId').first();
     this.orgSizeSelect = page.locator('#organizationSize').first();
     this.interestSelect = page.locator('#interestedIn').first();
-    //this.scheduleButton = page.locator("//header[@id='header']//button[@type='submit'][normalize-space()='Schedule a demo']")
     this.scheduleButton=page.getByRole('button', { name: 'Schedule a demo' })
   }
 
@@ -52,5 +51,14 @@ export class CorporateWellnessPage {
       console.error('Error filling valid details:');
     }
   }
-
+  async dropSelect() {
+    await this.orgSizeSelect.selectOption({ label: '1001-5000' });
+    await this.interestSelect.selectOption({ label: 'Referring someone' });
+  }
+ 
+  async getDropSelectValue() {
+    const sizeValue = await this.orgSizeSelect.inputValue();
+    const interestValue = await this.interestSelect.inputValue();
+    return { sizeValue, interestValue };
+  }
 }

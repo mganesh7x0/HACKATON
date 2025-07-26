@@ -36,5 +36,5 @@ test('Check for presence of popular cities', async ({ page }) => {
     popularCities.forEach(city => expect(cities).toContain(city));
   } catch (error) {
     console.log('Error in Check for presence of popular cities test');
-  }
+  } 
 });

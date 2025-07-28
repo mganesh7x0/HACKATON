@@ -6,9 +6,6 @@ export class HospitalPage {
         this.hospitaltype = this.page.getByPlaceholder('Search doctors, clinics, hospitals, etc.');
         this.hospitalselec = this.page.locator('//div[@class="c-omni-suggestion-group"][1]/div[4]');
         this.messageLocator = this.page.locator('.u-bold.u-large-font');
-        this.firstHospital = this.page.locator("(//div[@class='c-estb-card'])[1]");
-        this.dname = this.page.locator('//h2[@class="doctor-name"]')
-
     }
 
     async navigating() {

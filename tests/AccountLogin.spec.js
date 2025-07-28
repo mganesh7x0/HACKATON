@@ -13,10 +13,6 @@ test.afterEach(async ({ page }) => {
   console.log('Test finished.');
 });
 
-//
-// Sanity Suite
-//
-
 test('Valid Login', async () => {
   await accountLogin.login(loginData.valid.username, loginData.valid.password);
 });

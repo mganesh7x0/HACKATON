@@ -30,14 +30,6 @@ export class CorporateWellnessPage {
     }
   }
 
-  async submitForm() {
-    try {
-      await this.scheduleButton.click();
-    } catch (error) {
-      console.error('Error submitting the form:');
-    }
-  }
-
   async fillValidDetails() {
     try {
       await this.nameInput.type('Kiran');

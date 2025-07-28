@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
-
 import { HospitalPage } from '../pages/hospitalPage';
-
 test('Find hospitals in Chennai with filters', async ({ page }) => {
     try {
         const hospitalPage = new HospitalPage(page);

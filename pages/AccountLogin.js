@@ -37,8 +37,4 @@ export class AccountLogin {
     return await this.rememberCheckbox.isChecked();
   }
 
-  async getloginName() {
-    return await this.login_name.innerText()
-  }
-
 }
